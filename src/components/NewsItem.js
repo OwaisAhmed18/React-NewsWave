@@ -11,7 +11,7 @@ export class NewsItem extends Component {
           <img src={imgUrl} className="card-img-top" alt="..."/>
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
-            <p className="card-text">{description}</p>
+            <p className="card-text">{description}...</p>
             <p className="card-text"><small className="text-body-secondary">on {new Date(date).toGMTString()}</small></p>
             <a href={url} target="_blank" rel="noreferrer" className="btn btn-dark">Read more</a>
           </div>

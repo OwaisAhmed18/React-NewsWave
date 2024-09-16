@@ -32,21 +32,25 @@ export class News extends Component {
       this.props.category.slice(1);
   }
 
-  async componentDidMount() {
-    this.fetchArticles();
-  }
-
   fetchArticles = async () => {
+    this.props.setProgress(10);
     this.setState({ loading: true });
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=10a95195ffd14a8e8f734ed5e1d9d209&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
+    this.props.setProgress(30);
     let parsedData = await data.json();
+    this.props.setProgress(70);
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
       loading: false,
     });
+    this.props.setProgress(100);
   };
+
+  async componentDidMount() {
+    this.fetchArticles();
+  }
 
   fetchMoreData = async () => {
     this.setState({ loadingMore: true });
@@ -81,9 +85,9 @@ export class News extends Component {
           >
             <div className="container">
               <div className="row my-3">
-                {this.state.articles.map((element) => {
+                {this.state.articles.map((element, index) => {
                   return (
-                    <div className="col-md-4 my-3" key={element.url}>
+                    <div className="col-md-4 my-3" key={element.url + index}>
                       <NewsItem
                         title={
                           element.title
