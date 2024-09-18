@@ -52,7 +52,7 @@ const News = ({ country = "in",
 
   return (
     <>
-        <h2 className="container my-4">
+         <h2 className="container" style={{ marginTop: '90px', marginRight: '90px', marginBottom: '10px', marginLeft: '90px' }}>
           NewsWave | Top Headlines -{" "}
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </h2>
