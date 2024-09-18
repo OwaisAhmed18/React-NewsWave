@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -94,4 +95,11 @@ const News = ({ country = "in",
   );
 };
 
+News.propTypes = {
+  country: PropTypes.string,
+  pageSize: PropTypes.number,
+  category: PropTypes.string,
+  apiKey: PropTypes.string.isRequired,
+  setProgress: PropTypes.func.isRequired,
+};
 export default News;
