@@ -1,12 +1,11 @@
 import React from 'react'
-
 const NewsItem =(props)=> {
   
     let {title, imgUrl, description, url,author, date} = props ;
     return (
       <> 
         <div className="card">
-        <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'90%', zIndex:'1'}}>
+        <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'88%', zIndex:'1'}}>
               {author}</span>
           <img src={imgUrl} className="card-img-top" alt="..."/>
           <div className="card-body">

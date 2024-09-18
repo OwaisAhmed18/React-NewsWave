@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const News = ({ country = "in",
   pageSize = 6,
@@ -90,6 +91,7 @@ const News = ({ country = "in",
               ))}
             </div>
           </div>
+          <ScrollToTopButton />
         </InfiniteScroll>
     </>
   );
